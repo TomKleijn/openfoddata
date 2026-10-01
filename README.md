@@ -9,3 +9,7 @@ It records values, not what they mean: measured amounts and their sources. Turni
 ## Status
 
 Early design. See [docs/data-model.md](docs/data-model.md) for what a record contains and why.
+
+## License
+
+The data is published under the [Open Database License (ODbL) 1.0](LICENSE-DATA): free to use for anything, with credit to OpenFODData, and improved versions of the database stay open. The code is published under the [MIT license](LICENSE).

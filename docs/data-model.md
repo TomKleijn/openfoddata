@@ -134,6 +134,10 @@ Developers who need portion weights, such as how much a clove of garlic or a med
 - Variants: none
 - FODMAP values: six subgroups in grams per 100 g, each with a source and status, or unknown
 
-## Open questions
+## Licensing
 
-- **Licensing:** proposed ODbL for the data and MIT for the code, not decided yet.
+The data is published under the [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/), see [LICENSE-DATA](../LICENSE-DATA). Anyone can use it for anything, including paid products, as long as they credit OpenFODData. Anyone who publishes an improved version of the database itself has to release it under ODbL too, so improvements flow back to everyone. Apps, websites and charts built with the data can stay closed; they only need the credit.
+
+The code (website, API and submission form) is published under the MIT license, see [LICENSE](../LICENSE).
+
+Contributors agree that their submissions are published under ODbL. The submission form asks for this with a checkbox: "I agree my submission is published under the Open Database License."
