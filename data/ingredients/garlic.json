@@ -1,0 +1,50 @@
+{
+  "id": "garlic",
+  "name": "Garlic",
+  "category": "vegetables",
+  "type": "whole",
+  "base": null,
+  "variants": [],
+  "values": {
+    "fructans": {
+      "amount": 17.4,
+      "source": "muir-2007",
+      "status": "submitted",
+      "note": "The original table is behind a paywall. The value is the top of the range given in the abstract, where garlic is named first, and is quoted as garlic's value in Wang and Cheong 2023. A reviewer with access should check it against the paper's table."
+    },
+    "gos": null,
+    "lactose": null,
+    "fructose": {
+      "amount": 0.17,
+      "source": "petropoulos-2018",
+      "status": "submitted",
+      "note": "Mean of 14 Greek landraces, calculated from Table 6 (range 0.08 to 0.41). Values vary by variety and origin: a South Korean study cited in the same paper found up to 1.05."
+    },
+    "glucose": {
+      "amount": 0.03,
+      "source": "petropoulos-2018",
+      "status": "submitted",
+      "note": "Mean of 14 Greek landraces, calculated from Table 6. 11 of 14 samples had only traces, counted as 0."
+    },
+    "sorbitol": null,
+    "mannitol": null
+  },
+  "sources": {
+    "muir-2007": {
+      "title": "Fructan and free fructose content of common Australian vegetables and fruit",
+      "authors": "Muir JG, Shepherd SJ, Rosella O, Rose R, Barrett JS, Gibson PR",
+      "publisher": "Journal of Agricultural and Food Chemistry 55(16), 6619-6627",
+      "year": 2007,
+      "url": "https://doi.org/10.1021/jf070623x",
+      "method": "Megazyme fructan assay, fresh weight"
+    },
+    "petropoulos-2018": {
+      "title": "Nutritional Value, Chemical Characterization and Bulb Morphology of Greek Garlic Landraces",
+      "authors": "Petropoulos SA, Fernandes A, Ntatsi G, Petrotos K, Barros L, Ferreira ICFR",
+      "publisher": "Molecules 23(2), 319",
+      "year": 2018,
+      "url": "https://doi.org/10.3390/molecules23020319",
+      "method": "HPLC with refractive index detection, peeled cloves of mature cured bulbs, 14 landraces, 3 batches each, fresh weight"
+    }
+  }
+}
