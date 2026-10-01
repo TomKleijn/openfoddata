@@ -134,6 +134,16 @@ Developers who need portion weights, such as how much a clove of garlic or a med
 - Variants: none
 - FODMAP values: six subgroups in grams per 100 g, each with a source and status, or unknown
 
+## File format
+
+Each ingredient is one JSON file in `data/ingredients/`, named after its id. See [apple.json](../data/ingredients/apple.json) for a working example.
+
+- All amounts are in grams per 100 grams, so the unit isn't repeated in every value.
+- A subgroup that wasn't measured is `null`. A measured zero is `0.0` with a source.
+- Each value refers to an entry in the record's `sources` list, so a source used for several values is written down once.
+- An optional `note` explains anything a reviewer or developer should know, such as a source that measured only the flesh.
+- An ingredient with variants keeps its values inside each variant instead of at the top level.
+
 ## Licensing
 
 The data is published under the [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/), see [LICENSE-DATA](../LICENSE-DATA). Anyone can use it for anything, including paid products, as long as they credit OpenFODData. Anyone who publishes an improved version of the database itself has to release it under ODbL too, so improvements flow back to everyone. Apps, websites and charts built with the data can stay closed; they only need the credit.

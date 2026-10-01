@@ -1,0 +1,51 @@
+{
+  "id": "apple",
+  "name": "Apple",
+  "category": "fruit",
+  "type": "whole",
+  "base": null,
+  "variants": [],
+  "values": {
+    "fructans": null,
+    "gos": null,
+    "lactose": {
+      "amount": 0.0,
+      "source": "usda-fdc-171688",
+      "status": "submitted"
+    },
+    "fructose": {
+      "amount": 5.9,
+      "source": "usda-fdc-171688",
+      "status": "submitted"
+    },
+    "glucose": {
+      "amount": 2.43,
+      "source": "usda-fdc-171688",
+      "status": "submitted"
+    },
+    "sorbitol": {
+      "amount": 0.55,
+      "source": "aprea-2017",
+      "status": "submitted",
+      "note": "Mean of 40 samples across 16 cultivars, calculated from Table 1 (range 0.13 to 1.29). Flesh only, without skin; the skin contains more sorbitol than the flesh."
+    },
+    "mannitol": null
+  },
+  "sources": {
+    "usda-fdc-171688": {
+      "title": "Apples, raw, with skin (FDC ID 171688)",
+      "publisher": "USDA FoodData Central, SR Legacy",
+      "year": 2019,
+      "url": "https://fdc.nal.usda.gov/food-details/171688/nutrients",
+      "method": "Analytical, 25 samples, with skin"
+    },
+    "aprea-2017": {
+      "title": "Sweet taste in apple: the role of sorbitol, individual sugars, organic acids and volatile compounds",
+      "authors": "Aprea E, Charles M, Endrizzi I, et al.",
+      "publisher": "Scientific Reports 7, 44950",
+      "year": 2017,
+      "url": "https://doi.org/10.1038/srep44950",
+      "method": "Ion chromatography (HPIC-PAD), 40 samples, flesh without skin"
+    }
+  }
+}
