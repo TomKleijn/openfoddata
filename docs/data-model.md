@@ -99,13 +99,24 @@ Rules for every value:
 
 ### Status
 
-Each value carries one of these, so developers can decide what they accept:
+Each value has one of two statuses:
 
-- **Verified:** backed by a published lab measurement and approved by two reviewers
-- **Sourced:** has a citation, checked by one reviewer
-- **Community:** submitted without a published source
+- **Submitted:** added by a contributor with a measured amount and a source, not yet reviewed
+- **Verified:** checked by a reviewer against its source
 
-Processed ingredients vary by method (how long bread ferments, how long cheese ages), so their submissions also need a short description of the method, to check against the source.
+Both are published. A new submission appears in the data straight away as submitted and moves to verified after review. Developers decide what they accept: a cautious app uses only verified values, others can use both. This keeps contributors' work visible while the review queue is long, and the status keeps the data honest.
+
+Every submission needs a measured amount and a source. Processed ingredients vary by method (how long bread ferments, how long cheese ages), so their submissions also need a short description of the method.
+
+### Review
+
+To verify a value, the reviewer checks three things:
+
+1. **The source is a real measurement:** a published study or lab report that exists and can be found.
+2. **The number matches the source,** including the unit. Mixing up grams per 100 grams with grams per serving is the most likely mistake.
+3. **The ingredient matches the source:** the same variant and, for processed ingredients, the same method.
+
+Each verified value records who verified it and when. One reviewer is enough to start with. Once there are more volunteers, verification will require a second reviewer.
 
 ## Not included: serving sizes
 
@@ -125,5 +136,4 @@ Developers who need portion weights, such as how much a clove of garlic or a med
 
 ## Open questions
 
-- **Status levels:** whether "community" values without a source belong in the database at all, now that only measured amounts are accepted.
 - **Licensing:** proposed ODbL for the data and MIT for the code, not decided yet.
