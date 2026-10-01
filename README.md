@@ -4,7 +4,7 @@ An open, community-maintained database of FODMAP values for single ingredients, 
 
 The research institutes that measure FODMAP content keep their data inside their own apps. OpenFODData collects published, citable measurements in one open place, so anyone can build on them.
 
-It records values, not what they mean: measured amounts, their sources, and normal portion weights. Turning those into ratings or traffic lights is up to the apps using the data.
+It records values, not what they mean: measured amounts and their sources. Turning those into ratings or traffic lights is up to the apps using the data.
 
 ## Status
 

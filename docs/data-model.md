@@ -4,7 +4,7 @@ This document describes what an OpenFODData record contains and why. It is the r
 
 ## Principle: values, not what they mean
 
-OpenFODData records facts: measured FODMAP amounts, where each amount comes from, and what a normal portion weighs. It does not say whether a food is low, moderate or high, and it contains no thresholds or traffic lights.
+OpenFODData records facts: measured FODMAP amounts and where each amount comes from. It does not say whether a food is low, moderate or high, and it contains no thresholds or traffic lights.
 
 Interpreting the values is up to the developers who use the data. Thresholds are averages, people react differently, and apps have different needs. Keeping interpretation out of the data keeps the facts neutral and the project small. A traffic-light service could be built later as a separate layer on top, without changing the database.
 
@@ -86,7 +86,7 @@ Six subgroups, each stored as an amount in **grams per 100 grams** of the ingred
 | Sorbitol | Polyols |
 | Mannitol | Polyols |
 
-Per 100 grams is a storage base, not a serving size. Nobody eats 100 grams of garlic, but a fixed base keeps ingredients comparable and lets developers calculate any portion. Serving sizes are stored separately.
+Per 100 grams is a storage base, not a serving size. Nobody eats 100 grams of garlic, but a fixed base keeps ingredients comparable and lets developers calculate any portion.
 
 Fructose and glucose are stored as two separate amounts. Fructose only matters when there's more of it than glucose, and that excess can be calculated from the two.
 
@@ -107,9 +107,11 @@ Each value carries one of these, so developers can decide what they accept:
 
 Processed ingredients vary by method (how long bread ferments, how long cheese ages), so their submissions also need a short description of the method, to check against the source.
 
-### Typical servings
+## Not included: serving sizes
 
-The weight of normal portions, for example 1 clove of garlic = 3 grams. How servings are described and who decides what's typical is still open.
+OpenFODData doesn't store typical servings. Deciding what a normal portion is (half an apple or a whole one, a Dutch or an American portion) is a judgement, and judgements are left to developers.
+
+Developers who need portion weights, such as how much a clove of garlic or a medium apple weighs, can get them from [USDA FoodData Central](https://fdc.nal.usda.gov/), a free and open database that lists household portion weights for thousands of foods.
 
 ## Example
 
@@ -120,10 +122,8 @@ The weight of normal portions, for example 1 clove of garlic = 3 grams. How serv
 - Base: Plum
 - Variants: none
 - FODMAP values: six subgroups in grams per 100 g, each with a source and status, or unknown
-- Typical servings: to be decided
 
 ## Open questions
 
-- **Typical servings:** how portions are described (clove, slice, handful), who decides what's typical, and how to handle different national portion sizes.
 - **Status levels:** whether "community" values without a source belong in the database at all, now that only measured amounts are accepted.
 - **Licensing:** proposed ODbL for the data and MIT for the code, not decided yet.
