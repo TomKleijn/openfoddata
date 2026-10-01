@@ -1,2 +1,11 @@
-# openfoddata
-Open, community-maintained database of FODMAP values for ingredients, with a free API.
+# OpenFODData
+
+An open, community-maintained database of FODMAP values for single ingredients, with a free API.
+
+The research institutes that measure FODMAP content keep their data inside their own apps. OpenFODData collects published, citable measurements in one open place, so anyone can build on them.
+
+It records values, not what they mean: measured amounts, their sources, and normal portion weights. Turning those into ratings or traffic lights is up to the apps using the data.
+
+## Status
+
+Early design. See [docs/data-model.md](docs/data-model.md) for what a record contains and why.
