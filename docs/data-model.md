@@ -90,12 +90,29 @@ Per 100 grams is a storage base, not a serving size. Nobody eats 100 grams of ga
 
 Fructose and glucose are stored as two separate amounts. Fructose only matters when there's more of it than glucose, and that excess can be calculated from the two.
 
+### Value states
+
+Each subgroup value is in one of four states:
+
+- **Measured:** an amount in grams per 100 grams, from a source.
+- **Trace:** the source detected the subgroup but found too little to measure. This is different from zero: something is there, in a very small amount.
+- **Not applicable:** the subgroup can't occur in this food by nature, such as lactose in garlic. Allowed only for the combinations listed below.
+- **Unknown:** nobody has measured it yet. Unknown stays unknown, never 0: a 0 would tell people something is safe when nobody checked.
+
+**Not applicable is only allowed for:**
+
+| Subgroup | Not applicable for |
+|---|---|
+| Lactose | Every ingredient not made from milk |
+| Fructans, GOS, sorbitol, mannitol | Plain meat, fish and eggs |
+
+Anything else needs a measurement, even when the answer seems obvious. The list stays short on purpose: plant foods can contain surprising things, and a wrong "not applicable" is as misleading as a wrong 0. Adding to the list is a project decision, not something a single submission can do.
+
 Rules for every value:
 
 - **Only measured amounts.** Sources that only say "high in fructose" without numbers are not accepted. They can be a lead to find the underlying study.
-- **Unknown stays unknown.** If a subgroup wasn't measured, the value is unknown, never 0. A 0 would tell people something is safe when nobody checked.
-- **Every value has its own source.** Fructans can come from one study and sorbitol from another.
-- **Every value has a status** (see below).
+- **Every measured or trace value has its own source.** Fructans can come from one study and sorbitol from another. Not applicable needs no source, because the list above is the justification.
+- **Every value except unknown has a status** (see below).
 
 ### Status
 
@@ -106,7 +123,7 @@ Each value has one of two statuses:
 
 Both are published. A new submission appears in the data straight away as submitted and moves to verified after review. Developers decide what they accept: a cautious app uses only verified values, others can use both. This keeps contributors' work visible while the review queue is long, and the status keeps the data honest.
 
-Every submission needs a measured amount and a source. Processed ingredients vary by method (how long bread ferments, how long cheese ages), so their submissions also need a short description of the method.
+Every measured or trace submission needs a source. Processed ingredients vary by method (how long bread ferments, how long cheese ages), so their submissions also need a short description of the method.
 
 ### Review
 
@@ -115,6 +132,8 @@ To verify a value, the reviewer checks three things:
 1. **The source is a real measurement:** a published study or lab report that exists and can be found.
 2. **The number matches the source,** including the unit. Mixing up grams per 100 grams with grams per serving is the most likely mistake.
 3. **The ingredient matches the source:** the same variant and, for processed ingredients, the same method.
+
+For a not applicable value, the reviewer only checks that the combination is on the list.
 
 Each verified value records who verified it and when. One reviewer is enough to start with. Once there are more volunteers, verification will require a second reviewer.
 
@@ -132,14 +151,15 @@ Developers who need portion weights, such as how much a clove of garlic or a med
 - Type: Processed
 - Base: Plum
 - Variants: none
-- FODMAP values: six subgroups in grams per 100 g, each with a source and status, or unknown
+- FODMAP values: six subgroups, each measured, trace, not applicable or unknown
 
 ## File format
 
-Each ingredient is one JSON file in `data/ingredients/`, named after its id. See [apple.json](../data/ingredients/apple.json) for a working example.
+Each ingredient is one JSON file in `data/ingredients/`, named after its id. See [apple.json](../data/ingredients/apple.json) and [garlic.json](../data/ingredients/garlic.json) for working examples.
 
 - All amounts are in grams per 100 grams, so the unit isn't repeated in every value.
-- A subgroup that wasn't measured is `null`. A measured zero is `0.0` with a source.
+- Each value has a `state`: `measured` (with an `amount`), `trace` or `not_applicable`. Unknown is `null`.
+- A measured zero is `"state": "measured"` with `"amount": 0.0` and a source. It's stronger than not applicable, so keep it when a source has it.
 - Each value refers to an entry in the record's `sources` list, so a source used for several values is written down once.
 - An optional `note` explains anything a reviewer or developer should know, such as a source that measured only the flesh.
 - An ingredient with variants keeps its values inside each variant instead of at the top level.

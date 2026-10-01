@@ -7,20 +7,26 @@
   "variants": [],
   "values": {
     "fructans": {
+      "state": "measured",
       "amount": 17.4,
       "source": "muir-2007",
       "status": "submitted",
       "note": "The original table is behind a paywall. The value is the top of the range given in the abstract, where garlic is named first, and is quoted as garlic's value in Wang and Cheong 2023. A reviewer with access should check it against the paper's table."
     },
     "gos": null,
-    "lactose": null,
+    "lactose": {
+      "state": "not_applicable",
+      "status": "submitted"
+    },
     "fructose": {
+      "state": "measured",
       "amount": 0.17,
       "source": "petropoulos-2018",
       "status": "submitted",
       "note": "Mean of 14 Greek landraces, calculated from Table 6 (range 0.08 to 0.41). Values vary by variety and origin: a South Korean study cited in the same paper found up to 1.05."
     },
     "glucose": {
+      "state": "measured",
       "amount": 0.03,
       "source": "petropoulos-2018",
       "status": "submitted",

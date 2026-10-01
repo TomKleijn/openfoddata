@@ -9,21 +9,25 @@
     "fructans": null,
     "gos": null,
     "lactose": {
+      "state": "measured",
       "amount": 0.0,
       "source": "usda-fdc-171688",
       "status": "submitted"
     },
     "fructose": {
+      "state": "measured",
       "amount": 5.9,
       "source": "usda-fdc-171688",
       "status": "submitted"
     },
     "glucose": {
+      "state": "measured",
       "amount": 2.43,
       "source": "usda-fdc-171688",
       "status": "submitted"
     },
     "sorbitol": {
+      "state": "measured",
       "amount": 0.55,
       "source": "aprea-2017",
       "status": "submitted",
